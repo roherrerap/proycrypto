@@ -1,17 +1,19 @@
 # proycrypto
 A cada actividad de seguridad toca:
 - Realizar casos de prueba (seguridad).
-- Ejecución de casos de prueba automatizados.
+- Ejecuciï¿½n de casos de prueba automatizados.
+
+Actividades:
+- Autenticaciï¿½n LDAP: Richard (Pruebas)
+- Inicio sesiï¿½n Token, cifrado SHA 256: Richard (Pruebas)
+- Validaciï¿½n campos(palabras reservadas):
+- Evitar ataques DoS: Richard (Pendiente)
+- Evitar inserciï¿½n de cï¿½digo:
+- Cross site scripting:
 
 
-             Actividades              |    Responsable    |   Progreso   |
---------------------------------------|-------------------|--------------|  
-Autenticación LDAP                    |      Richard      |   Pruebas    |
-Inicio sesión Token                   |      Richard      |   Pruebas    |
-Validación campos(palabras reservadas)|                   |              |
-Evitar ataques DoS                    |      Richard      |  Pendiente   |
-Evitar inserción de código            |                   |              |
-Cross site scripting                  |                   |              |
+Nota: si conocen mï¿½s actividades para seguridad no duden
+en comentarlas y discutimos si es necesario agregarlas
+o dejar asï¿½.
 
-
-Nota: si conocen más actividades para seguridad no duden en comentarlas y discutimos si es necesario agregarlas o dejar así
+Todo el cÃ³digo estÃ¡ en el lenguaje de programaciÃ³n JAVA.
