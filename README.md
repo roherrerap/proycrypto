@@ -6,7 +6,7 @@ A cada actividad de seguridad toca:
 Actividades:
 - Autenticaci�n LDAP: Richard (Pruebas)
 - Inicio sesi�n Token, cifrado SHA 256: Richard (Pruebas)
-- Validaci�n campos(palabras reservadas):
+- Validaci�n campos(palabras reservadas):(Adriana)
 - Evitar ataques DoS: Richard (Pendiente)
 - Evitar inserci�n de c�digo:
 - Cross site scripting:
