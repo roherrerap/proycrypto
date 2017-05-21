@@ -1,0 +1,9 @@
+arqsoft\bank\bean\SessionBean.class
+arqsoft\bank\model\Session.class
+arqsoft\bank\service\LdapService.class
+arqsoft\bank\route\AuthenticationRoute.class
+arqsoft\bank\model\User.class
+arqsoft\bank\service\ServiceInterface.class
+arqsoft\bank\bean\UserBean.class
+arqsoft\bank\service\UserService.class
+arqsoft\bank\service\SessionService.class

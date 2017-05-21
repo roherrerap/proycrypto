@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Bank - Users</title>
+        <meta name="author" content="The Author"></meta>
+    </h:head>
+    <h:body style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="Bank" brandHref="/bank/faces/index.xhtml" inverse="true" fixed="top">
+            <b:navbarLinks>
+                <b:dropMenu value="Users">
+                    <b:navLink value="Create User" outcome="create-user"></b:navLink>
+                    <b:navLink value="Read User" outcome="read-user"></b:navLink>
+                    <b:navLink value="Read All Users" outcome="read-all-users"></b:navLink>
+                    <b:navLink value="Update User" outcome="update-user"></b:navLink>
+                    <b:navLink value="Delete User" outcome="delete-user"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            <h:form styleClass="navbar-form navbar-right">
+                <b:commandButton value="Log Out" look="danger" icon="log-out" iconAlign="left"/>
+            </h:form>
+        </b:navBar>
+        <b:container>
+            <h:form>
+                <b:jumbotron>
+                    <b:icon name="glyphicon glyphicon-user" size="4x"/>
+                    <h1>Users</h1>
+                </b:jumbotron>
+            </h:form>
+        </b:container>
+        <b:container>
+            <h:form>
+                <b:row>
+                    <b:column col-md="3">
+                        <b:panel title="Create User" look="success">
+                            <p>Here, you can create an user!</p>
+                            <b:button outcome="create-user" look="primary" value="Create" icon="plus"/>
+                        </b:panel>
+                    </b:column>
+                    <b:column col-md="3">
+                        <b:panel title="Read User" look="info">
+                            <p>Here, you can read an user!</p>
+                            <b:button outcome="read-user" look="primary" value="Read" icon="search"/>
+                        </b:panel>
+                        <b:panel title="Read All Users" look="info">
+                            <p>Here, you can read all users!</p>
+                            <b:button outcome="read-all-users" look="primary" value="Read" icon="search"/>
+                        </b:panel>
+                    </b:column>
+                    <b:column col-md="3">
+                        <b:panel title="Update User" look="warning">
+                            <p>Here, you can update an user!</p>
+                            <b:button outcome="update-user" look="primary" value="Update" icon="ok"/>
+                        </b:panel>
+                    </b:column>
+                    <b:column col-md="3">
+                        <b:panel title="Delete User" look="danger">
+                            <p>Here, you can delete an user!</p>
+                            <b:button outcome="delete-user" look="primary" value="Delete" icon="remove"/>
+                        </b:panel>
+                    </b:column>
+                </b:row>
+            </h:form>
+            <hr/>
+            <footer>
+                <p>Universidad Nacional de Colombia © 2017</p>
+            </footer>
+        </b:container>
+    </h:body>
+</html>
+
+
+

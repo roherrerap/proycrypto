@@ -1,0 +1,12 @@
+transactions-db:
+  build: ./db-server
+  ports:
+    - 27017:27017
+  hostname: mongodb
+
+transactions-ms:
+  build: .
+  ports:
+    - "4020:4020"
+  links:
+    - transactions-db

@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Bank</title>
+        <meta name="author" content="The Author"></meta>
+    </h:head>
+    <h:body onload="getDataFromLocalStorage()" style="padding-top: 50px; padding-bottom: 20px;">
+        <b:navBar brand="Bank" inverse="true" fixed="top">
+            <b:navbarLinks>
+                <b:navLink value="Login" outcome="login"></b:navLink>
+                <b:dropMenu value="Users">
+                    <b:navLink value="Create User" outcome="users/create-user"></b:navLink>
+                    <b:navLink value="Read User" outcome="users/read-user"></b:navLink>
+                    <b:navLink value="Read All Users" outcome="users/read-all-users"></b:navLink>
+                    <b:navLink value="Update User" outcome="users/update-user"></b:navLink>
+                    <b:navLink value="Delete User" outcome="users/delete-user"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            <h:form styleClass="navbar-form navbar-right">
+                <input type="text" id="formid:inputid"/>
+                <script>
+                    function getDataFromLocalStorage() {
+                        document.getElementById('formid:inputid').value = localStorage.getItem("name") + " (" +
+                            localStorage.getItem("email") + ")";
+                    }
+                </script>
+                <b:commandButton value="Log Out" look="danger" icon="log-out" iconAlign="left"/>
+            </h:form>
+        </b:navBar>
+        <b:jumbotron>
+            <b:container>
+                <h1>Welcome!</h1>
+                <p>This is a Bank application for the Software Architecture course.</p>
+                <p>
+                    <a href="http://academic.javergarav.co/software-architecture-2017i" class="btn btn-lg btn-info" target="_blank">View Course »</a>
+                </p>
+            </b:container>
+        </b:jumbotron>
+        <b:container>
+            <h:form>
+                <b:row>
+                    <b:column col-md="4">
+                        <b:panel title="Users" look="success">
+                            <b:icon name="glyphicon glyphicon-user" size="2x"/>
+                            <h2>Users</h2>
+                            <p>Module description.</p>
+                            <p><b:button outcome="users/users" value="Go" look="success"/></p>
+                        </b:panel>
+                    </b:column>
+                    <b:column col-md="4">
+                        <b:panel title="Accounts" look="success">
+                            <b:icon name="glyphicon glyphicon-piggy-bank" size="2x"/>
+                            <h2>Accounts</h2>
+                            <p>Module description.</p>
+                            <p><b:button outcome="" value="Go" look="success"/></p>
+                        </b:panel>
+                    </b:column>
+                    <b:column col-md="4">
+                        <b:panel title="Transactions" look="success">
+                            <b:icon name="glyphicon glyphicon-euro" size="2x"/>
+                            <h2>Transactions</h2>
+                            <p>Module description.</p>
+                            <p><b:button outcome="" value="Go" look="success"/></p>
+                        </b:panel>
+                    </b:column>
+                </b:row>
+            </h:form>
+            <hr/>
+            <footer>
+                <p>Universidad Nacional de Colombia © 2017</p>
+            </footer>
+        </b:container>
+    </h:body>
+</html>

@@ -1,0 +1,10 @@
+accounts-db:
+  build: ./db-server
+  ports:
+    - "3307:3306"
+accounts-ms:
+  build: .
+  ports:
+    - "4010:4010"
+  links:
+    - accounts-db

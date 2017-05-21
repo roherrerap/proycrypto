@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Bank - Create User</title>
+    <meta name="author" content="The Author"></meta>
+    <style type="text/css">
+        .form-jumbotron {
+            padding: 20px;
+            text-align: center;
+        }
+        .form-panel {
+            margin: 0 auto;
+            max-width: 330px;
+            padding: 15px;
+        }
+    </style>
+</h:head>
+<h:body style="padding-top: 50px; padding-bottom: 20px;">
+    <b:navBar brand="Bank" brandHref="/bank/faces/index.xhtml" inverse="true" fixed="top">
+        <b:navbarLinks>
+        </b:navbarLinks>
+        <h:form styleClass="navbar-form navbar-right">
+            <b:commandButton value="Log Out" look="danger" icon="log-out" iconAlign="left"/>
+        </h:form>
+    </b:navBar>
+    <b:container>
+        <h:form>
+            <b:jumbotron styleClass="form-jumbotron">
+                <h1>Login</h1>
+            </b:jumbotron>
+        </h:form>
+    </b:container>
+    <b:container>
+        <b:row>
+            <b:column col-md="6" offset="3">
+                <b:panel title="Login" look="success">
+                    <h:form styleClass="form-panel"  >
+                        <b:inputText id="email" placeholder="Email" value="#{sessionBean.email}" required="true" requiredMessage="The email is required!">
+                            <f:facet name="prepend">
+                                <b:icon name="pencil" />
+                            </f:facet>
+                        </b:inputText>
+                        <b:message for="@previous" />
+                        <b:inputText id="password" placeholder="Password" value="#{sessionBean.password}" required="true" requiredMessage="The password is required!">
+                            <f:facet name="prepend">
+                                <b:icon name="pencil" />
+                            </f:facet>
+                        </b:inputText>
+                        <b:message for="@previous" />
+                        <b:commandButton action="#{sessionBean.createSession()}" value="Create Session" look="success" iconAlign="left"/>
+                        <br></br>
+                        <b:commandButton onclick="addSessionToLocalStorage('#{sessionBean.name}', '#{sessionBean.email}','#{sessionBean.token}'); window.location.href='index.xhtml'" value="Add to LocalStorage" look="success" iconAlign="left"/>
+                        <br></br>
+                        <a href="index.xhtml" class="btn btn-success">Go to Index</a>
+                        <script>
+                            function addSessionToLocalStorage(name, email, token) {
+                                if (typeof(Storage) !== "undefined") {
+                                    localStorage.setItem("name", name);
+                                    localStorage.setItem("email", email);
+                                    localStorage.setItem("token", token);
+                                } else {
+                                    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage!";
+                                }
+                            }
+                        </script>
+                    </h:form>
+                    <b:alert severity="success" title="Message" closable="true">#{sessionBean.beanMessage}</b:alert>
+                </b:panel>
+            </b:column>
+        </b:row>
+        <hr/>
+        <footer>
+            <p>Universidad Nacional de Colombia © 2017</p>
+        </footer>
+    </b:container>
+</h:body>
+</html>
