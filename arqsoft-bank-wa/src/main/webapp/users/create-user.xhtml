@@ -46,25 +46,32 @@
                 <b:column col-md="6" offset="3">
                     <b:panel title="Create User" look="success">
                         <h:form styleClass="form-panel"  >
+                            <b:row>
                             <b:inputText id="name" placeholder="Name" value="#{userBean.name}" required="true" requiredMessage="The name is required!">
                                 <f:facet name="prepend">
                                     <b:icon name="pencil" />
                                 </f:facet>
                             </b:inputText>
-                            <b:message for="@previous" />
+                            </b:row>
+                            <b:row>
                             <b:inputText id="email" placeholder="Email" value="#{userBean.email}" required="true" requiredMessage="The email is required!">
                                 <f:facet name="prepend">
                                     <b:icon name="pencil" />
                                 </f:facet>
                             </b:inputText>
-                            <b:message for="@previous" />
-                            <b:inputText id="password" placeholder="Password" value="#{userBean.password}" required="true" requiredMessage="The password is required!">
+                            </b:row>
+
+                            <b:row tooltip="size >= 8.">
+                            <b:inputSecret id="password" placeholder="Password" pattern=".{8,}" maxlength="255" size="15" value="#{userBean.password}" required="true" requiredMessage="The password is required!">
                                 <f:facet name="prepend">
-                                    <b:icon name="key" />
+                                    <b:icon name="lock" />
                                 </f:facet>
-                            </b:inputText>
+                            </b:inputSecret>
                             <b:message for="@previous" />
+                            </b:row>
+                            <b:row>
                             <b:commandButton action="#{userBean.createUser()}" value="Create" look="success" icon="plus" iconAlign="left"/>
+                            </b:row>
                         </h:form>
                         <b:alert severity="success" title="Message" closable="true">#{userBean.beanMessage}</b:alert>
                     </b:panel>
