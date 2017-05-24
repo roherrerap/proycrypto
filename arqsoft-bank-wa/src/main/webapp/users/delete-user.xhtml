@@ -54,7 +54,7 @@
                             <b:message for="@previous" />
                             <b:commandButton action="#{userBean.deleteUser()}" value="Delete" look="danger" icon="remove" iconAlign="left"/>
                         </h:form>
-                        <b:alert severity="danger" title="Message" closable="true">#{userBean.message}</b:alert>
+                        <b:alert severity="danger" title="Message" closable="true">#{userBean.beanMessage}</b:alert>
                     </b:panel>
                 </b:column>
             </b:row>
