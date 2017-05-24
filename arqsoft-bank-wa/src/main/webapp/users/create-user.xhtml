@@ -38,7 +38,7 @@
             <h:form>
                 <b:jumbotron styleClass="form-jumbotron">
                     <h1>Create User</h1>
-                </b:jumbotron>    
+                </b:jumbotron>
             </h:form>
         </b:container>
         <b:container>
@@ -58,9 +58,15 @@
                                 </f:facet>
                             </b:inputText>
                             <b:message for="@previous" />
+                            <b:inputText id="password" placeholder="Password" value="#{userBean.password}" required="true" requiredMessage="The password is required!">
+                                <f:facet name="prepend">
+                                    <b:icon name="key" />
+                                </f:facet>
+                            </b:inputText>
+                            <b:message for="@previous" />
                             <b:commandButton action="#{userBean.createUser()}" value="Create" look="success" icon="plus" iconAlign="left"/>
                         </h:form>
-                        <b:alert severity="success" title="Message" closable="true">#{userBean.message}</b:alert>
+                        <b:alert severity="success" title="Message" closable="true">#{userBean.beanMessage}</b:alert>
                     </b:panel>
                 </b:column>
             </b:row>
