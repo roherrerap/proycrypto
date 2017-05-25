@@ -31,9 +31,11 @@ import java.lang.Exception;
 public class UserBean implements Serializable {
 
     private Long id;
-
+    @NotNull
+    @Size(min=3, max=100, message = "Debe tener entre 2 y 100 caracteres")
     private String name;
-
+    @NotNull
+    @Size(min=8, max=20, message = "Debe tener entre 8 y 20 caracteres")
     private String email;
     @Pattern(regexp = "^[a-zA-Z]+$", message = "Solo se admiten letras mayúsculas, minusculas")
     @Size(min = 8)
