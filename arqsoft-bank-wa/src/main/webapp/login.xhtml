@@ -39,17 +39,21 @@
             <b:column col-md="6" offset="3">
                 <b:panel title="Login" look="success">
                     <h:form styleClass="form-panel"  >
+                        <b:row>
                         <b:inputText id="email" placeholder="Email" value="#{sessionBean.email}" required="true" requiredMessage="The email is required!">
                             <f:facet name="prepend">
                                 <b:icon name="pencil" />
                             </f:facet>
                         </b:inputText>
+                        </b:row>
                         <b:message for="@previous" />
-                        <b:inputText id="password" placeholder="Password" value="#{sessionBean.password}" required="true" requiredMessage="The password is required!">
+                        <b:row tooltip="size >= 8.">
+                        <b:inputSecret id="password" placeholder="Password" pattern=".{8,}" maxlength="255" size="15" value="#{sessionBean.password}" required="true" requiredMessage="The password is required!">
                             <f:facet name="prepend">
-                                <b:icon name="pencil" />
+                                <b:icon name="lock" />
                             </f:facet>
-                        </b:inputText>
+                        </b:inputSecret>
+                        </b:row>
                         <b:message for="@previous" />
                         <b:commandButton action="#{sessionBean.createSession()}" value="Create Session" look="success" iconAlign="left"/>
                         <br></br>

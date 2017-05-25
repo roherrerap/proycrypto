@@ -8,6 +8,9 @@ import arqsoft.bank.service.LdapService;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 /**
@@ -18,7 +21,11 @@ import java.io.Serializable;
 public class SessionBean implements Serializable {
 
     private long userId;
+    @NotNull
+    @Size(min=8, max=20, message = "Debe tener entre 8 y 20 caracteres")
     private String email;
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Solo se admiten letras mayúsculas, minusculas y sin espacios")
+    @Size(min = 8)
     private String password;
     private String name;
     private String token;

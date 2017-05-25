@@ -37,7 +37,7 @@ public class UserBean implements Serializable {
     @NotNull
     @Size(min=8, max=20, message = "Debe tener entre 8 y 20 caracteres")
     private String email;
-    @Pattern(regexp = "^[a-zA-Z]+$", message = "Solo se admiten letras mayúsculas, minusculas")
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Solo se admiten letras mayúsculas, minusculas y sin espacios")
     @Size(min = 8)
     private String password;
 
