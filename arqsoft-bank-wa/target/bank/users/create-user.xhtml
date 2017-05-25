@@ -47,7 +47,7 @@
                     <b:panel title="Create User" look="success">
                         <h:form styleClass="form-panel"  >
                             <b:row>
-                            <b:inputText id="name" placeholder="Name" value="#{userBean.name}" required="true" requiredMessage="The name is required!">
+                            <b:inputText id="name" placeholder="Name" value="#{userBean.name}" ajax="true" required="true" requiredMessage="The name is required!" autocomplete="false" update="@(.message)">
                                 <f:facet name="prepend">
                                     <b:icon name="pencil" />
                                 </f:facet>

@@ -15,6 +15,11 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
+
 
 import java.lang.Exception;
 
@@ -26,8 +31,12 @@ import java.lang.Exception;
 public class UserBean implements Serializable {
 
     private Long id;
+
     private String name;
+
     private String email;
+    @Pattern(regexp = "^[a-zA-Z]+$", message = "Solo se admiten letras mayúsculas, minusculas")
+    @Size(min = 8)
     private String password;
 
     private String beanMessage;
